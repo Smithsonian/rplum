@@ -246,12 +246,12 @@
     supportedData = detsOrig[,c(7, 8)]
     detsOrig = detsOrig[,-c(radonColumn,sdRadonColumn)]
 
-    if( length(is.na(supportedData)) > 0 ) {
+    if( any(is.na(supportedData))) {
       message("Missing values are detected; the radon case is set to 1.")
 
       elim <- c() # get rid of data with NAs
       for(i in 1:nrow(supportedData)) 
-        if( length(is.na(supportedData[i,])) > 0 ) 
+        if( any(is.na(supportedData[i,]))) 
           elim <- c( elim, i )
       supportedData = supportedData[ -elim, ]
       

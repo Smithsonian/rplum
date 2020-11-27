@@ -1,1 +1,4 @@
 inst/doc
+.Rproj.user
+rplum.Rproj
+inst/.DS_Store
